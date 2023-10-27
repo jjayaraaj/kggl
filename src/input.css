@@ -1,116 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    body{
-        @apply font-inter  text-base antialiased;
-    }
+  body {
+    @apply font-inter text-xs  md:text-base antialiased;
+  }
 
-    .heading-1{
-        @apply font-medium text-4xl;
-    }
-    
+  .heading-1 {
+    @apply font-medium text-xl md:text-4xl;
+  }
 }
 
 @layer components {
+  .nav {
+    @apply absolute -top-5 -right-0 p-3 min-w-max  bg-gray-regular shadow-2xl md:shadow-none md:bg-transparent flex flex-col md:flex-row gap-2 md:gap-8  md:text-white text-xs md:text-base rounded;
+  }
 
-    .hexa{
-        @apply flex flex-col;
+  .nav a {
+    @apply border-b md:border-none text-sm font-light;
+  }
 
-        & img {
-            @apply relative  z-10;
-        }
-        .card{
-            @apply bg-white h-96 relative -top-36 rounded-3xl px-6 space-y-2;
+  .hexa {
+    @apply flex md:flex-col transition-all  hover:translate-y-6;
 
-            & .title {
-                @apply mt-40 text-2xl;
-            }
-        }
+    & img {
+      @apply relative  z-10 h-10 md:h-auto hidden md:block;
     }
+    .card {
+      @apply bg-white h-auto md:h-96 relative md:-top-36 rounded-3xl px-6 py-6 md:py-0 space-y-2 text-black hover:shadow-2xl;
 
+      & .title {
+        @apply md:mt-40 text-base md:text-2xl font-semibold md:font-normal;
+      }
+    }
+  }
 }
 
-.btn{
-    @apply inline-flex px-3 py-2 text-xl;
+.btn {
+  @apply inline-flex px-3 py-2 text-xl;
 }
 
 .btn-yellow {
-    @apply bg-yellow-400 text-black  text-base items-center gap-x-4;
+  @apply bg-yellow-400 text-black text-xs  md:text-base items-center gap-x-4;
 
-    & svg {
-        @apply h-4 w-4
-    }
+  & svg {
+    @apply h-4 w-4;
+  }
 }
 
 .banner-content {
-    @apply flex h-full pt-24;
-
+  @apply flex h-full;
 }
 
-.owl-carousel  .owl-dots {
-    @apply relative -top-24 z-10  w-full flex items-center justify-center  gap-3
+.owl-carousel .owl-dots {
+  @apply relative md:-top-24 z-10  w-full flex items-center justify-center  gap-3;
 }
 
 .owl-carousel .owl-dots .owl-dot {
-    @apply bg-gray-300 h-3 w-3 rounded-full     
+  @apply bg-gray-300 h-3 w-3 rounded-full;
 }
 .owl-dots .owl-dot.active {
-    @apply bg-yellow-regular
+  @apply bg-yellow-regular;
+}
+
+.main-banner {
+  @apply relative flex justify-center;
+
+  & img {
+    @apply object-cover h-full w-full;
+  }
+}
+
+.banner-item {
+  @apply absolute w-full h-full top-3 md:top-0 left-0 flex items-center;
 }
 
 .banner-content-box {
-    @apply w-[55%] space-y-2
+  @apply md:w-[80%] w-full space-y-2 md:space-y-6 text-center md:text-left;
 }
-.banner-heading {
-    @apply text-6xl text-white font-semibold leading-none
+.banner-heading,
+.inner-banner-heading {
+  @apply text-lg md:text-6xl text-white md:font-semibold leading-none;
 }
 
-.banner-subcontent{
-    @apply text-white text-2xl font-normal
+.banner-heading2 {
+  @apply md:text-4xl text-white;
 }
+.owl-banner .owl-item.active .banner-heading,
+.owl-banner .owl-item.active .banner-heading2,
+.inner-banner-heading {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: fadeInDown;
+  animation-delay: 0.3s;
+}
+
+.banner-subcontent {
+  @apply text-white text-xs md:text-2xl font-light md:w-3/4;
+}
+
+.owl-banner .owl-item.active .banner-subcontent {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: fadeInDown;
+  animation-delay: 0.3s;
+}
+
+.banner-button {
+  @apply text-center md:text-left;
+}
+
+.owl-banner .owl-item.active .banner-button,
+.strip-main,
+.product-banner-image,
+.banner-subcontent {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+  animation-delay: 0.3s;
+}
+
 .banner-strip {
-    @apply bg-yellow-400 w-96 px-3 h-8 flex items-center group-hover:bg-primary-400/50 group-hover:text-white cursor-pointer
+  @apply bg-yellow-400 md:w-96 px-3 h-8 flex items-center group-hover:bg-primary-400/50 group-hover:text-white cursor-pointer;
 }
-.banner-strip-arrow{
-    @apply w-0 h-0 border-t-[1rem] border-b-[1rem] border-b-transparent border-t-transparent border-l-8 border-l-yellow-400 group-hover:border-l-primary-400/50
+.banner-strip-arrow {
+  @apply w-0 h-0 border-t-[1rem] border-b-[1rem] border-b-transparent border-t-transparent border-l-8 border-l-yellow-400 group-hover:border-l-primary-400/50;
 }
 
 footer {
-    .heading {
-        @apply text-lg font-semibold
-    }
+  .heading {
+    @apply text-lg font-semibold;
+  }
 }
 
-.product-div{
-    @apply flex flex-col space-y-10 w-1/2;
+.product-div {
+  @apply flex flex-col space-y-10 md:w-1/2;
 
-    & h2{
-        @apply text-2xl font-semibold;
+  & h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  & ul {
+    @apply space-y-4 ml-10 flex flex-col;
+
+    & li {
+      @apply inline-flex items-center gap-x-3;
+
+      & svg {
+        @apply h-3 w-3 text-primary-50;
+      }
     }
-
-    & ul {
-        @apply space-y-4 ml-10 flex flex-col;
-
-        & li {
-            @apply inline-flex items-center gap-x-3;
-
-            & svg {
-                @apply h-3 w-3 text-primary-50;
-            }
-        }
-    }
+  }
 }
-
-
 
 @layer utilities {
-    .w-container {
-        @apply max-w-7xl mx-auto px-8
-    }
-
-    
+  .w-container {
+    @apply max-w-7xl mx-auto px-8;
+  }
 }
-

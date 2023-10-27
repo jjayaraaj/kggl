@@ -1,345 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./../dist/output.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./../dist/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 </head>
+
 <body>
-   
-    <!-- top strip -->
-    <div class=" bg-primary-400 h-8 "></div>
-    <div id="navDiv"></div>
-    <!-- banner -->
-   
-    <div class=" bg-gray-light ">
-        <div class=" relative flex justify-center">
-            <div class=" absolute w-full top-32 ">
-                <div class="  w-full ">
-                    <div class="w-container ">
-                      
 
-                        <!-- content -->
-                        <div class="banner-content ">
-                            <div class=" banner-content-box !w-[60%]">
-                                <h1 class="banner-heading">Industries we serve</h1>
-                                <h6 class=" banner-subcontent">We serve in 9 different industries and we are growing to meet needs of new and emerging industries too</h6>
-                            </div>
-                        </div>
+  <!-- top strip -->
+  <div class=" bg-primary-400 h-8 "></div>
+  <div id="navDiv">
+    <div class=" w-full  absolute z-10  ">
+      <!-- nav -->
+      <div class=" w-container " x-data="{ menu: false }">
+        <nav class="flex justify-between md:items-center py-4 ">
+          <a href="#">
+            <img src="./../dist/images/kggl-logo.svg" class="w-20 md:w-auto" alt="">
+          </a>
+          <div class="relative flex items-center">
+            <div @click="menu = !menu" class="md:hidden">
+              <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
 
-                    </div>
-                </div>
             </div>
-            <img src="./../dist//images/industries-banner.svg" alt="">
+
+            <div class="nav hidden md:flex items-center">
+              <a href="index.html">Home</a>
+              <a href="products.html">Products</a>
+              <a href="industries.html">Industries</a>
+              <a href="contact.html">Contact</a>
+              <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="nav" x-show="menu" @click.outside="menu = false">
+              <a href="index.html">Home</a>
+              <a href="products.html">Products</a>
+              <a href="industries.html">Industries</a>
+              <a href="contact.html">Contact</a>
+              <a href="#">Company Brochure</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- nav -->
+
+    </div>
+  </div>
+  <!-- banner -->
+
+  <div class=" bg-gray-light ">
+    <div class=" relative flex justify-center">
+      <div class=" absolute w-full   h-full ">
+
+        <div class="w-container  h-full ">
+
+
+          <!-- content -->
+          <div class="banner-content flex items-center">
+            <div class=" banner-content-box  ">
+              <h1 class="inner-banner-heading">Industries we serve</h1>
+              <h6 class=" banner-subcontent">We serve in 9 different industries and we are growing to meet needs of
+                new and emerging industries too</h6>
+            </div>
+          </div>
+
         </div>
-        
+
+      </div>
+      <img src="./../dist//images/industries-banner.svg" alt="">
     </div>
 
-    <!-- content -->
-    <div class="  py-16">
-        <div class="w-container space-y-10">
-            <!-- product 1 -->
-           <div class=" flex gap-x-10 items-center justify-between">
-            <div class="w-1/2">
-                <img src="./../dist//images/tunneling.svg" class="w-4/5" alt="">
-            </div>
+  </div>
 
-            <div class="product-div">
-                <h2>Tunnelling</h2>
-                <p>To be a globally renowned organization, delivering exceptional products and services, ensuring stakeholder satisfaction, and providing unparalleled customer service.</p>
-                <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+  <!-- content -->
+  <div class="">
+    <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-left-top py-8  md:py-16">
+      <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-right-top ">
+        <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-left-bottom py-16">
+          <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-right-bottom ">
+            <div class="w-container space-y-28">
+              <!-- product 1 -->
+              <div class=" flex flex-col md:flex-row gap-x-10 items-start justify-between">
+                <div class="md:w-1/2">
+                  <img src="./../dist//images/tunneling.png" class="w-4/5" alt="">
+                </div>
+
+                <div class="product-div">
+                  <h2>Tunnelling</h2>
+                  <p>To be a globally renowned organization, delivering exceptional products and services, ensuring
+                    stakeholder
+                    satisfaction, and providing unparalleled customer service.</p>
+                  <ul>
+                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg>
                       It is a building agent used in household cleaning solutions cleaning</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg> Improves washing property of the detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg> Prevents mineral deposits by removing water hardness</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                </ul>
-                <div class="flex">
-                    <a href="#" class="btn btn-yellow">View Products</a>
+                  </ul>
+
                 </div>
-            </div>
-           </div>
+              </div>
 
-           <!-- product 2 -->
-           <div class=" flex gap-x-10 items-center flex-row-reverse justify-between">
-            <div class="flex justify-end">
-                <img src="./../dist/images/steel.svg" class="w-4/5" alt="">
-            </div>
-
-            <div class="product-div">
-                <h2>Steel</h2>
-                <p>TSodium silicate is used, along with magnesium silicate, in muffler repair and fitting paste.When dissolved in water, both sodium silicate and magnesium silicate form a thick paste that is easy to apply.</p>
-                <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg>
-                      It is a building agent used in household cleaning solutions cleaning</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Improves washing property of the detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Prevents mineral deposits by removing water hardness</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                </ul>
-                <div class="flex">
-                    <a href="#" class="btn btn-yellow">View Products</a>
+              <!-- product 2 -->
+              <div class=" flex flex-col  gap-x-10 items-start md:flex-row-reverse justify-between">
+                <div class="flex justify-end">
+                  <img src="./../dist/images/steel.png" class="md:w-4/5" alt="">
                 </div>
-            </div>
-           </div>
+
+                <div class="product-div">
+                  <h2>Steel</h2>
+                  <p>Sodium silicate is used, along with magnesium silicate, in muffler repair and fitting paste.When
+                    dissolved in water, both sodium silicate and magnesium silicate form a thick paste that is easy to
+                    apply.</p>
+
+                  <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Sodium silicate is used as a binding agent in the production of refractory materials, which
+                      are
+                      essential for lining steelmaking furnaces and ladles.</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>It is added to cooling water systems in steel mills to help control the temperature and
+                      reduce
+                      the formation of slag, which can be detrimental to the steelmaking process.</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>It is utilized in wastewater treatment processes within steel mills to help in the
+                      coagulation
+                      and flocculation of impurities, making it easier to remove them from the water.</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>In the handling of steel materials, sodium silicate can be applied as a dust suppressant to
+                      minimize airborne particulate matter.</li>
+
+                  </ul>
+
+                </div>
+              </div>
 
 
-             <!-- product 3 -->
-             <div class=" flex gap-x-10 items-center">
+              <!-- product 3 -->
+              <div class="flex flex-col md:flex-row gap-x-10 items-start">
                 <div class="">
-                    <img src="./../dist//images/soap.svg" class="w-4/5" alt="">
+                  <img src="./../dist//images/soap.svg" class="md:w-4/5" alt="">
                 </div>
-    
+
                 <div class="product-div">
-                    <h2>Soap / Detergent and Hygiene</h2>
-                    <p>TKiran Geo offers a range of industrial chemicals tailored for soap, detergent, and hygiene products. Our research-driven solutions are designed for peak efficacy, enhancing the quality and effectiveness of finished goods. The inclusion of silicates in synthetic detergents not only softens water but also prevents residue buildup due to their superior suspending and anti-re-deposition properties.</p>
-                    <ul>
-                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg>
-                          It is a building agent used in household cleaning solutions cleaning</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Improves washing property of the detergent</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Prevents mineral deposits by removing water hardness</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                    </ul>
-                </div>
-               </div>
+                  <h2>Soap / Detergent and Hygiene</h2>
+                  <p>At Kiran Global Chems Ltd. we produce a host of industrial chemicals that have diverse application
+                    in the soap and detergent manufacturing companies. Our chemical products have been developed after
+                    extensive research to deliver highest efficacy, complementing the finished good for greatest
+                    effectiveness and quality.</p>
+                  <p>Adding silicates to synthetic detergents is beneficial because it softens water and is easily
+                    rinsed away.
+                    Due to the great suspending and anti-re-deposition qualities, they do not leave deposits on the
+                    fibers. </p>
+                  <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>It is a building agent used in household cleaning solutions cleaning</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Improves washing property of the detergent</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Prevents mineral deposits by removing water hardness</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Helps control the viscosity in production of detergent powder of a desired density</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>An ingredient in the drying process in manufacture of detergent powder</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Acts as a binder to give appropriate degree of “hardness” to the spherical particles of
+                      detergent</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Its alkalinity enables them to neutralize acidic stains, promote emulsification of fats and
+                      oils
+                      and disperse or solubilize proteins</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Stabilizes pH to the desired level</li>
 
-                  <!-- product 5 -->
-              <div class=" flex gap-x-10 flex-row-reverse items-center justify-between">
-                <div class="w-1/2 flex justify-end">
-                    <img src="./../dist//images/ceramic.svg" class="w-4/5" alt="">
+                  </ul>
                 </div>
-    
+              </div>
+
+              <!-- product 5 -->
+              <div class="  flex flex-col  gap-x-10  md:flex-row-reverse items-start justify-between">
+                <div class="md:w-1/2 flex justify-end">
+                  <img src="./../dist//images/ceramic.svg" class="w-4/5" alt="">
+                </div>
+
                 <div class="product-div">
-                    <h2>Ceramic</h2>
-                    <p>To be a globally renowned organization, delivering exceptional products and services, ensuring stakeholder satisfaction, and providing unparalleled customer service.</p>
-                    <ul>
-                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg>
-                          It is a building agent used in household cleaning solutions cleaning</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Improves washing property of the detergent</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Prevents mineral deposits by removing water hardness</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                    </ul>
-                    <div class="flex">
-                        <a href="#" class="btn btn-yellow">View Products</a>
-                    </div>
+                  <h2>Ceramic</h2>
+                  <p>Kiran Global Chems Ltd. supplies sodium silicate and potassium silicate as a key ingredient for
+                    manufacturing ceramics, both for industrial purpose and decorative use. The top quality sand used by
+                    us for manufacturing the silicates and blending with high quality chemicals enables us to provide
+                    assured quality to our clients.</p>
+                  <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As a Binding Agent in Refractory plastic cements for hard coating</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As a Deflocculator in ceramic casting</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As a Deflocculator to make thinner paste and for water Reduction</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As a Deflocculator in refined clay to improve Fluidity</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As an economic Binding Agent in Acid-resistant cements</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Forming a fire-proof protective layer in slip castings</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As thermal insulation-proof Layer</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Providing protective coat for Antique and for antique Finish</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As a clay slip deflocculant in small dosage to reduce shrinkage</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Vermiculite and perlite are completely non-flammable, when bonded using silicates</li>
+                  </ul>
+
                 </div>
-               </div>
+              </div>
 
 
-             
 
-           <!-- product 4 -->
-           <div class=" flex gap-x-10 items-center  justify-between">
-            <div class="flex ">
-                <img src="./../dist/images/oil.png" class="w-4/5" alt="">
-            </div>
 
-            <div class="product-div">
-                <h2>Oil Field and Drilling</h2>
-                <p>TSodium silicate is used, along with magnesium silicate, in muffler repair and fitting paste.When dissolved in water, both sodium silicate and magnesium silicate form a thick paste that is easy to apply.</p>
-                <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg>
-                      It is a building agent used in household cleaning solutions cleaning</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Improves washing property of the detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Prevents mineral deposits by removing water hardness</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                </ul>
-                <div class="flex">
-                    <a href="#" class="btn btn-yellow">View Products</a>
+              <!-- product 4 -->
+              <div class="flex flex-col md:flex-row gap-x-10 items-start  justify-between">
+                <div class="flex ">
+                  <img src="./../dist/images/oil.png" class="w-4/5" alt="">
                 </div>
-            </div>
-           </div>
 
-           
-                <!-- product 6 -->
-           <div class=" flex gap-x-10 items-center flex-row-reverse justify-between">
-            <div class="flex justify-end">
-                <img src="./../dist/images/water.svg" class="w-4/5" alt="">
-            </div>
+                <div class="product-div">
+                  <h2>Oil Field and Drilling</h2>
+                  <p>At Kiran Global Chem Ltd., we offer sodium silicate and potassium silicate for cost efficient
+                    application for various applications on oil field and drilling fluids. We offer chemicals that are
+                    environment friendly and facilitate enhanced results in conformance, remediation and cementing. The
+                    application of sodium and potassium silicates is largely includes</p>
+                  <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>Control of colloids in geological formation</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>In drilling mud operations</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As effective chemical agent to prevent corrosion</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg>As breakdown emulsifier in drilling operations</li>
+                  </ul>
 
-            <div class="product-div">
-                <h2>Water Treatment</h2>
-                <p>At Kiran Geo, we manufacture sodium silicate which are proven to have highest efficacy for a host of factors in treating portable and industrial water, Prominent among these are</p>
-                <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                </div>
+              </div>
+
+
+              <!-- product 6 -->
+              <div class="  flex flex-col  gap-x-10  md:flex-row-reverse items-start justify-between">
+                <div class="flex justify-end">
+                  <img src="./../dist/images/water.png" class="w-4/5" alt="">
+                </div>
+
+                <div class="product-div">
+                  <h2>Water Treatment</h2>
+                  <p>At Kiran Geo, we manufacture sodium silicate which are proven to have highest efficacy for a host
+                    of factors in treating portable and industrial water, Prominent among these are</p>
+                  <ul>
+                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg>
-                      AS a Flocculent for raw and waste water treatment, to form a fil that prevents metal corrosion in water lines</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                      AS a Flocculent for raw and waste water treatment, to form a fil that prevents metal corrosion in
+                      water
+                      lines</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg> To reduce and control toxicity of lead and copper in their treatment</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg> To improve the taste and steblize presence of iron and magnesium in bore
                       hole water prior to aeration</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg> As a binder to reduce porosity and setting time in the solidification and
                       stabilization</li>
 
-                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg> As an efficient coagulation aide when sued with aluminum sulphate in
                       normal purifications process</li>
-                </ul>
-                <div class="flex">
-                    <a href="#" class="btn btn-yellow">View Products</a>
-                </div>
-            </div>
-           </div>
+                  </ul>
 
-             <!-- product 8 -->
-             <div class=" flex gap-x-10 items-center justify-between">
-                <div class="w-1/2">
-                    <img src="./../dist//images/foundries.svg" class="w-4/5" alt="">
                 </div>
-    
-                <div class="product-div">
-                    <h2>Foundries</h2>
-                    <p>Kiran Geo offers a range of industrial chemicals tailored for soap, detergent, and hygiene products. Our research-driven solutions are designed for peak efficacy, enhancing the quality and effectiveness of finished goods. The inclusion of silicates in synthetic detergents not only softens water but also prevents residue buildup due to their superior suspending and anti-re-deposition properties.</p>
-                    <ul>
-                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg>
-                          It is a building agent used in household cleaning solutions cleaning</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Improves washing property of the detergent</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Prevents mineral deposits by removing water hardness</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                    </ul>
-                    <div class="flex">
-                        <a href="#" class="btn btn-yellow">View Products</a>
-                    </div>
-                </div>
-               </div>
+              </div>
 
               <!-- product 8 -->
-              <div class=" flex gap-x-10 flex-row-reverse items-center justify-between">
-                <div class="w-1/2 flex justify-end">
-                    <img src="./../dist//images/package.svg" class="w-4/5" alt="">
+              <div class="flex flex-col md:flex-row gap-x-10 items-start  justify-between">
+                <div class="md:w-1/2">
+                  <img src="./../dist//images/foundries.svg" class="w-4/5" alt="">
                 </div>
-    
+
                 <div class="product-div">
-                    <h2>Packing and Adhesives</h2>
-                    <p>To be a globally renowned organization, delivering exceptional products and services, ensuring stakeholder satisfaction, and providing unparalleled customer service.</p>
-                    <ul>
-                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg>
-                          It is a building agent used in household cleaning solutions cleaning</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Improves washing property of the detergent</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Prevents mineral deposits by removing water hardness</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                    </ul>
-                    <div class="flex">
-                        <a href="#" class="btn btn-yellow">View Products</a>
-                    </div>
-                </div>
-               </div>
-
-
-                <!-- product 9 -->
-           <div class=" flex gap-x-10 items-center  justify-between">
-            <div class="flex ">
-                <img src="./../dist/images/concrete.png" class="w-4/5" alt="">
-            </div>
-
-            <div class="product-div">
-                <h2>Concretes and General</h2>
-                <p>At Kiran Geo, we manufacture sodium silicate which are proven to have highest efficacy for a host of factors in treating portable and industrial water, Prominent among these are</p>
-                <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+                  <h2>Foundries</h2>
+                  <p>Kiran Global Chems Ltd. manufactures and supplies primary chemical agents for foundries across
+                    India and globally.Our industrial chemicals are used for a range of applications in treatment of
+                    metals.</p>
+                  <ul>
+                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
                       </svg>
-                      AS a Flocculent for raw and waste water treatment, to form a fil that prevents metal corrosion in water lines</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> To reduce and control toxicity of lead and copper in their treatment</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> To improve the taste and steblize presence of iron and magnesium in bore
-                      hole water prior to aeration</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> As a binder to reduce porosity and setting time in the solidification and
-                      stabilization</li>
+                      Used as a cost effective core sand binder in moulding steel and non-ferrous castings</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> It is used along with magnesium silicate for muffler repair, helping in reducing the sound
+                      emitted by internal combustion engine.</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> When dissolved with magnesium silicate, it forms a thick paste that can be used as fitting
+                      paste</li>
 
-                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> As an efficient coagulation aide when sued with aluminum sulphate in
-                      normal purifications process</li>
-                </ul>
-                <div class="flex">
-                    <a href="#" class="btn btn-yellow">View Products</a>
+                  </ul>
+
                 </div>
+              </div>
+
+              <!-- product 8 -->
+              <div class=" flex flex-col  gap-x-10  md:flex-row-reverse items-start justify-between">
+                <div class="md:w-1/2 flex justify-end">
+                  <img src="./../dist//images/package.svg" class="w-4/5" alt="">
+                </div>
+
+                <div class="product-div">
+                  <h2>Packing and Adhesives</h2>
+                  <p>The adhesives that are manufactured using chemical agents manufactured by us are known for their
+                    high binding propensity.The chemicals that we manufacture and supply for manufacturing adhesives
+                    are:</p>
+                  <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> In the ammunitions industry, it is used to seal combustible nitrated paper to form a
+                      conical paper cartridge for holding black powder. It is used to seal lead ball or conical bullet
+                      with the open end of the paper cartridge</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> It is the only inorganic adhesive that offer high strength at an economic price and sets
+                      rapidly</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> It is used in making paper tubes, multi-layer boards and fibre drums</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> It is used as an exhaust system joint and crack sealer for muffler, tailpipes and
+                      resonators repair</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> It is used as a high temperature adhesive in critical joint</li>
+
+                  </ul>
+
+                </div>
+              </div>
+
+
+              <!-- product 9 -->
+              <div class="flex flex-col md:flex-row gap-x-10 items-start  justify-between">
+                <div class="flex ">
+                  <img src="./../dist/images/concrete.png" class="w-4/5" alt="">
+                </div>
+
+                <div class="product-div">
+                  <h2>Concretes and General</h2>
+                  <p>Kiran Global Chem Ltd. offers highly effective and efficient chemical treatments for concrete and
+                    general masonry treatment. Our products are used extensively at various stage of manufacturing and
+                    application of concrete and in general masonry work</p>
+                  <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> As a curing agent, it is applied to the surface of fresh layer of concrete to extend its
+                      durability</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> To treat the concrete after it is completely dry or hardened for better water resistance
+                      and
+                      longevity</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> Chemical sealing of Concrete hardening against Grease and Dust Proofing</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> For Acid Resistance</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> Significantly reduces porosity in most masonry products making them far more wearable and
+                      water
+                      repellent</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> Used as an alkali activator in geopolymer cement and concrete</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> Apply a thin coat to unpainted plaster or concrete surface as a water repellent</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> To treat old concrete surfaces to provide a harder surface</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                          clip-rule="evenodd" />
+                      </svg> Acts as a penetrate into concrete and reacts with residual free lime to reduce porosity
+                    </li>
+                  </ul>
+
+                </div>
+              </div>
+
+
+
+
             </div>
-           </div>
-
-            
-
-
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-  
-   
 
-      <!-- footer -->
- <div id="footerDiv"></div>
 
- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>   
- <script src="./../dist/app.js"></script>
-   
+
+  <!-- footer -->
+  <div id="footerDiv"></div>
+
+  <script src="./../dist/jquery.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script src="./../dist/app.js"></script>
+
+
 </body>
+
 </html>

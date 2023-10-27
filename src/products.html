@@ -1,164 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./../dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 </head>
-<body>
-   
+
+<body x-data="{open: false}">
+
     <!-- top strip -->
     <div class=" bg-primary-400 h-8 "></div>
-    <div id="navDiv"></div>
+
 
     <!-- banner -->
-   
-    <div class=" h-[500px] bg-[url(./../dist//images/product-banner.svg)] bg-cover relative">
-        <div class=" relative flex  items-center">
-            
-               
-                    <div class="w-container w-full">
-                        <!-- nav -->
-                       
 
-                        <!-- content -->
-                        <div class="banner-content">
-                            <div class="banner-content-box">
-                                <h1 class="banner-heading">Our Products</h1>
-                                <div class=" flex group" >
-                                    <div class=" banner-strip"> Silicate grade 1</div>
-                                    <div class="banner-strip-arrow"></div>
-                                </div>
+    <div class="">
+        <div id="navDiv">
+            <div class=" w-full  absolute z-10  ">
+                <!-- nav -->
+                <div class=" w-container " x-data="{ menu: false }">
+                    <nav class="flex justify-between md:items-center py-4 ">
+                        <a href="#">
+                            <img src="./../dist/images/kggl-logo.svg" class="w-20 md:w-auto" alt="">
+                        </a>
+                        <div class="relative flex items-center">
+                            <div @click="menu = !menu" class="md:hidden">
+                                <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                                <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
 
+                            </div>
 
-                                <div class=" flex group" >
-                                    <div class=" banner-strip"> Silicate grade 2</div>
-                                    <div class="banner-strip-arrow"></div>
-                                </div>
+                            <div class="nav hidden md:flex items-center">
+                                <a href="index.html">Home</a>
+                                <a href="products.html">Products</a>
+                                <a href="industries.html">Industries</a>
+                                <a href="contact.html">Contact</a>
+                                <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                                    </svg>
+                                </a>
+                            </div>
 
-                                <div class=" flex group" >
-                                    <div class=" banner-strip"> Silicate grade 3</div>
-                                    <div class="banner-strip-arrow"></div>
-                                </div>
-                                
+                            <div class="nav" x-show="menu" @click.outside="menu = false">
+                                <a href="index.html">Home</a>
+                                <a href="products.html">Products</a>
+                                <a href="industries.html">Industries</a>
+                                <a href="contact.html">Contact</a>
+                                <a href="#">Company Brochure</a>
                             </div>
                         </div>
+                    </nav>
+                </div>
+                <!-- nav -->
 
-                    </div>
-               
-           
-            
+            </div>
         </div>
-        <div class=" absolute right-20 w-96">
-            <img src="./../dist/images/product-3.svg" alt="">    
+
+        <div class=" relative flex justify-center">
+            <div class=" absolute w-full   h-full ">
+                <div class="w-container w-full flex  h-full">
+                    <!-- nav -->
+
+
+                    <!-- content -->
+                    <div class="banner-content  flex items-center md:w-1/2">
+                        <div class="banner-content-box h-48 md:h-auto">
+                            <h1 class="inner-banner-heading h-full flex  items-center md:flex-none">Our Products</h1>
+                            <div class="hidden md:block space-y-2">
+                                <div class="strip-main ">
+                                    <a href="./products.html#product1">
+                                        <div class=" flex group">
+                                            <div class=" banner-strip"> Silicate grade 1</div>
+                                            <div class="banner-strip-arrow"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="strip-main">
+                                    <a href="./products.html#product2">
+                                        <div class=" flex group">
+                                            <div class=" banner-strip"> Silicate grade 2</div>
+                                            <div class="banner-strip-arrow"></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                                <div class="strip-main">
+                                    <a href="./products.html#product3">
+
+                                        <div class=" flex group">
+                                            <div class=" banner-strip"> Silicate grade 3</div>
+                                            <div class="banner-strip-arrow"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <img src="./../dist//images/product-banner.png" alt="">
+        </div>
+
+
+
+        <div class="product-banner-image absolute w-32 right-0 md:right-20 md:top-72 top-20 md:w-96">
+            <img src="./../dist/images/product-3.png" alt="">
         </div>
     </div>
 
     <!-- content -->
-    <div class=" bg-gray-light py-16">
-        <div class="w-container space-y-10">
-            <!-- product 1 -->
-           <div class=" flex gap-x-10 items-center">
-            <div class="w-1/2">
-                <img src="./../dist//images/product-1.svg" alt="">
-            </div>
+    <div class=" bg-white ">
+        <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-left-top py-8  md:py-16">
+            <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-right-top ">
+                <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-left-bottom py-16">
+                    <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-right-bottom ">
+                        <div class="w-container space-y-10">
+                            <!-- product 1 -->
+                            <div class=" flex flex-col md:flex-row gap-x-10 items-center" id="product1">
+                                <div class="md:w-1/2">
+                                    <img src="./../dist//images/product-1.svg" class="w-3/4 drop-shadow-2xl" alt="">
+                                </div>
 
-            <div class="product-div">
-                <h2>Silicate grade 1</h2>
-                <p>To be a globally renowned organization, delivering exceptional products and services, ensuring stakeholder satisfaction, and providing unparalleled customer service.</p>
-                <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg>
-                      It is a building agent used in household cleaning solutions cleaning</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Improves washing property of the detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Prevents mineral deposits by removing water hardness</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                </ul>
-            </div>
-           </div>
+                                <div class="product-div">
+                                    <h2 class="text-center md:text-left">Silicate grade 1</h2>
+                                    <p>To be a globally renowned organization, delivering exceptional products and
+                                        services,
+                                        ensuring
+                                        stakeholder satisfaction, and providing unparalleled customer service.</p>
+                                    <ul>
+                                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            It is a building agent used in household cleaning solutions cleaning</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Improves washing property of the detergent</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Prevents mineral deposits by removing water hardness</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Helps maintain suspension of the small dirt or greasy particles in
+                                            washing
+                                            liquid
+                                        </li>
+                                    </ul>
 
-           <!-- product 2 -->
-           <div class=" flex gap-x-10 items-center flex-row-reverse">
-            <div>
-                <img src="./../dist//images/product-2.svg" alt="">
-            </div>
+                                    <div>
+                                        <button @click="open = true" class="btn btn-yellow">View Specification
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            </svg>
 
-            <div class="product-div">
-                <h2>Silicate grade 2</h2>
-                <p>To be a globally renowned organization, delivering exceptional products and services, ensuring stakeholder satisfaction, and providing unparalleled customer service.</p>
-                <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg>
-                      It is a building agent used in household cleaning solutions cleaning</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Improves washing property of the detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Prevents mineral deposits by removing water hardness</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                        <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                      </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                </ul>
-            </div>
-           </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- product 2 -->
+                            <div class=" flex flex-col  gap-x-10 md:flex-row-reverse items-center" id="product2">
+                                <div class="md:w-1/2">
+                                    <img src="./../dist//images/product-2.png" class="w-3/4 drop-shadow-2xl" alt="">
+                                </div>
+
+                                <div class="product-div">
+                                    <h2 class="text-center md:text-left">Silicate grade 2</h2>
+                                    <p>To be a globally renowned organization, delivering exceptional products and
+                                        services,
+                                        ensuring
+                                        stakeholder satisfaction, and providing unparalleled customer service.</p>
+                                    <ul>
+                                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            It is a building agent used in household cleaning solutions cleaning</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Improves washing property of the detergent</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Prevents mineral deposits by removing water hardness</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Helps maintain suspension of the small dirt or greasy particles in
+                                            washing
+                                            liquid
+                                        </li>
+                                    </ul>
+
+                                    <div>
+                                        <button @click="open = true" class="btn btn-yellow">View Specification
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            </svg>
+
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
 
 
-             <!-- product 3 -->
-             <div class=" flex gap-x-10 items-center">
-                <div>
-                    <img src="./../dist//images/product-3.svg" alt="">
+                            <!-- product 3 -->
+                            <div class=" flex flex-col md:flex-row gap-x-10 items-center" id="product3">
+                                <div class=" md:w-1/2">
+                                    <img src="./../dist/images/product-3.png" class="w-3/4 drop-shadow-2xl" alt="">
+                                </div>
+
+                                <div class="product-div">
+                                    <h2 class="text-center md:text-left">Silicate grade 3</h2>
+                                    <p>To be a globally renowned organization, delivering exceptional products and
+                                        services,
+                                        ensuring
+                                        stakeholder satisfaction, and providing unparalleled customer service.</p>
+                                    <ul>
+                                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            It is a building agent used in household cleaning solutions cleaning</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Improves washing property of the detergent</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Prevents mineral deposits by removing water hardness</li>
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                                    clip-rule="evenodd" />
+                                            </svg> Helps maintain suspension of the small dirt or greasy particles in
+                                            washing
+                                            liquid
+                                        </li>
+                                    </ul>
+
+                                    <div>
+                                        <button @click="open = true" class="btn btn-yellow">View Specification
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            </svg>
+
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
                 </div>
-    
-                <div class="product-div">
-                    <h2>Silicate grade 3</h2>
-                    <p>To be a globally renowned organization, delivering exceptional products and services, ensuring stakeholder satisfaction, and providing unparalleled customer service.</p>
-                    <ul>
-                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg>
-                          It is a building agent used in household cleaning solutions cleaning</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Improves washing property of the detergent</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Prevents mineral deposits by removing water hardness</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
-                            <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
-                          </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                    </ul>
-                </div>
-               </div>
-
+            </div>
 
         </div>
     </div>
 
-    <!-- partners -->
-    <div class="  py-16">
-        <div class=" w-container h-40">
-            <div class=" text-xl">Global partners</div>
-            
+
+
+
+    <!-- footer -->
+    <div id="footerDiv"></div>
+
+    <div x-show="open" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!--
+          Background backdrop, show/hide based on modal state.
+      
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <!--
+              Modal panel, show/hide based on modal state.
+      
+              Entering: "ease-out duration-300"
+                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                To: "opacity-100 translate-y-0 sm:scale-100"
+              Leaving: "ease-in duration-200"
+                From: "opacity-100 translate-y-0 sm:scale-100"
+                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            -->
+                <div @click.away="open = false"
+                    class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl sm:p-6">
+                    <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-left">
+
+                        <div class="px-4 sm:px-6 lg:px-2">
+                            <div class="sm:flex sm:items-center">
+                                <div class="sm:flex-auto flex items-center justify-between">
+                                    <h1 class="text-base font-semibold leading-6 text-gray-900">Sales Specification</h1>
+                                    <!-- <p class="mt-2 text-sm text-gray-700">A list of all the users in your account
+                                        including their name, title, email and role.</p> -->
+                                    <svg @click="open = false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-6 h-6 cursor-pointer">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+
+                                </div>
+
+                            </div>
+                            <div class="mt-8 flow-root">
+                                <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                        <div
+                                            class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+                                            <table class="min-w-full divide-y divide-gray-300">
+                                                <thead class="bg-gray-50">
+                                                    <tr>
+                                                        <th scope="col"
+                                                            class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                                                            Particular</th>
+                                                        <th scope="col"
+                                                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                            Na2O</th>
+                                                        <th scope="col"
+                                                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                            SiO2</th>
+                                                        <th scope="col"
+                                                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                            Total Solids</th>
+                                                        <th scope="col"
+                                                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                            Weight Ratio</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="divide-y divide-gray-200 bg-white">
+                                                    <tr>
+                                                        <td
+                                                            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                            1:2.00</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            32.50 – 33.00%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            66.50 – 67.00%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            > 99.0%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            1:2.00 +/- 0.1</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td
+                                                            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                            1:2.20</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            30.50 – 31.50%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            67.50 – 68.00%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            > 99.0%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            1:2.20 +/-0.1</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td
+                                                            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                            1:3.20</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            23.50 – 24.50%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            75.50 – 76.50%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            > 99.0%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            1:3.20 +/-0.1</td>
+                                                    </tr>
+
+
+                                                    <tr>
+                                                        <td
+                                                            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                                                            1:3.40</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            22.50 -23.0%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            76.50 – 77.0%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            > 99.0%</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                            1:3.40 +/-0.1</td>
+                                                    </tr>
+
+                                                    <!-- More people... -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 
-   
+    <script src="./../dist/jquery.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./../dist/owl.carousel.min.js"></script>
+    <script src="./../dist/app.js"></script>
 
-   <!-- footer -->
-   <div id="footerDiv"></div>
-
-     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>   
-     <script src="./../dist/app.js"></script>
-   
 </body>
+
 </html>
