@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./../dist/output.css">
+  <link rel="stylesheet" href="./../dist/owl.carousel.min.css">
+  <link rel="stylesheet" href="./../dist/owl.theme.default.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 </head>
 
-<body>
+<body x-data="{industrySub: false}">
 
   <!-- top strip -->
   <div class=" bg-primary-400 h-8 "></div>
@@ -38,7 +40,24 @@
             <div class="nav hidden md:flex items-center">
               <a href="index.html">Home</a>
               <a href="products.html">Products</a>
-              <a href="industries.html">Industries</a>
+              <div class="relative" @mouseover="industrySub = true" @mouseout="industrySub = false">
+                <a href="industries.html">Industries
+                  <div class="submenu " x-show="industrySub">
+                    <ul>
+                      <li><a href="#">Tunneling</a></li>
+                      <li><a href="#">Steel</a></li>
+                      <li><a href="#">Detergent and Hygiene</a></li>
+                      <li><a href="#">Ceramic</a></li>
+                      <li><a href="#">Oil Field and Drilling</a></li>
+                      <li><a href="#">Water Treatment</a></li>
+                      <li><a href="#">Foundries</a></li>
+                      <li><a href="#">Packing and Adhesives</a></li>
+                      <li><a href="#">Concretes and General</a></li>
+                    </ul>
+                  </div>
+
+                </a>
+              </div>
               <a href="contact.html">Contact</a>
               <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -76,15 +95,15 @@
           <div class="banner-content flex items-center">
             <div class=" banner-content-box  ">
               <h1 class="inner-banner-heading">Industries we serve</h1>
-              <h6 class=" banner-subcontent">We serve in 9 different industries and we are growing to meet needs of
-                new and emerging industries too</h6>
+              <h6 class=" banner-subcontent">We serve different industries and we are growing to meet needs of
+                new and emerging industries.</h6>
             </div>
           </div>
 
         </div>
 
       </div>
-      <img src="./../dist//images/industries-banner.svg" alt="">
+      <img src="./../dist/images/industries-banner.png" alt="">
     </div>
 
   </div>
@@ -95,87 +114,180 @@
       <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-right-top ">
         <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-left-bottom py-16">
           <div class=" bg-[url('./../dist/images/pattern-1.svg')] bg-no-repeat bg-right-bottom ">
-            <div class="w-container space-y-28">
+            <div class=" px-16 space-y-28 indusrty">
               <!-- product 1 -->
               <div class=" flex flex-col md:flex-row gap-x-10 items-start justify-between">
-                <div class="md:w-1/2">
-                  <img src="./../dist//images/tunneling.png" class="w-4/5" alt="">
+                <div class="md:w-1/3 overflow-hidden">
+                  <div class="owl-industry1 owl-carousel industry">
+                    <div class=" ">
+                      <img src="./../dist/images/tunneling.png" alt="">
+                    </div>
+                    <div class="">
+                      <img src="./../dist/images/tunneling-2.png" alt="">
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Tunnelling</h2>
-                  <p>To be a globally renowned organization, delivering exceptional products and services, ensuring
-                    stakeholder
-                    satisfaction, and providing unparalleled customer service.</p>
-                  <ul>
-                    <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>
-                      It is a building agent used in household cleaning solutions cleaning</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Improves washing property of the detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Prevents mineral deposits by removing water hardness</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                  </ul>
+                  <p>KGGL is widely supplying “Grouting material” worldwide. KGGL Grout plays an important role in
+                    improving the ground stability by way of increased strength and reducing permeability of treated
+                    soils. KGGL Binder can effectively be used for:</p>
+                  <div class=" flex flex-col md:flex-row ">
+                    <ul>
+                      <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        Logging operation </li>
+                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg> Support of footing</li>
+                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg> Tunnel Support</li>
+
+                    </ul>
+
+                    <ul>
+                      <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        Pit excavation </li>
+                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg> Grouted cut-off wall and</li>
+                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg> Pipeline supports</li>
+
+                    </ul>
+                  </div>
+
+                  <p>KGGL Binder soluble silicate has been used successfully in chemical grouting and other geotechnical
+                    applications for more than 30 years. For Soil Stabilization and water control during excavation and
+                    tunneling projects, this grout offers several advantages</p>
+
+                  <div class=" flex flex-col md:flex-row ">
+                    <ul>
+                      <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        Reliable and Proven performance </li>
+                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg> Safety and ease of use</li>
+
+
+                    </ul>
+
+                    <ul>
+                      <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg>
+                        Environmental acceptability</li>
+                      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                            clip-rule="evenodd" />
+                        </svg> Adaptability over a wide range of applications</li>
+
+                    </ul>
+
+                  </div>
+                  <p>Suitable silicates are generally considered to be among the strongest and least toxic of the
+                    existing chemical grouts. Soluble silicates are inorganic, amorphous glasses.
+                  </p>
+                  <p> KGGL grout is a low-viscosity, chemical grout system used for ground consolidation and
+                    stabilization of foundation and footings located on fine to medium sands.
+                    Other important uses include control of water inflow into shafts and tunnels during excavation,
+                    pre-grouting of TBM/ EPBM tunnel headings, formation of impervious grout curtains and cut-off
+                    walls at dam sites;
+                  </p>
+
+                  <p>KGGL grouts are best suited for treating fine sand with mean particle size ranging from 1 to 0.1mm,
+                    which cannot be handled by cement grout.
+                  </p>
+                  <p>The physicochemical and mechanical properties of KGGL Grout depends on the characteristics of grout
+                    permeancy, Gel-Time control, Temperature sensitivity, Toxicity, Low initial viscosity, water
+                    solubility, and economic factor in addition to Strength.
+                  </p>
+                  <p>
+                    Engineering criteria to be used for Grout Evaluation are viscosity, setting time,
+                    Penetrability, strength of set grout and grouted mass, durability, and toxicity
+                  </p>
 
                 </div>
               </div>
 
               <!-- product 2 -->
               <div class=" flex flex-col  gap-x-10 items-start md:flex-row-reverse justify-between">
-                <div class="flex justify-end">
-                  <img src="./../dist/images/steel.png" class="md:w-4/5" alt="">
+
+                <div class="md:w-1/3 overflow-hidden ">
+                  <div class="flex justify-end ">
+                    <div class="owl-industry1 owl-carousel industry-right ">
+                      <div class="ml-auto">
+                        <img src="./../dist/images/steel.png" alt="">
+                      </div>
+                      <div class=" ml-auto">
+                        <img src="./../dist/images/steel2.png" alt="">
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Steel</h2>
-                  <p>Sodium silicate is used, along with magnesium silicate, in muffler repair and fitting paste.When
-                    dissolved in water, both sodium silicate and magnesium silicate form a thick paste that is easy to
-                    apply.</p>
+                  <p>KGGL manufactures the Effective Binder for Steel Industry, KGGL formulated the best bonding agent
+                    used for briquetting and pelletizing, KGGL can confidently say our proprietary bonding agent has
+                    gone through various in-house testing and has been perfected:</p>
+                  <p class=" font-semibold">The Salient features of KGGL Binder:</p>
+                  <p>KGGL Binder plays a crucial role in the successful production of DRI briquettes by acting as a
+                    binder, reducing agent, fluxing agent, and temperature regulator. It helps optimize the DRI
+                    production process, making it more efficient and cost-effective</p>
+                  <div class=" space-y-2 text-sm">
+                    <p><strong>KGGL Binder:</strong> holding the iron ore particles together in the briquettes. This
+                      helps maintain the briquettes' structural integrity, preventing them from falling apart during
+                      handling, transportation, and the DRI production process.</p>
 
-                  <ul>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Sodium silicate is used as a binding agent in the production of refractory materials, which
-                      are
-                      essential for lining steelmaking furnaces and ladles.</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>It is added to cooling water systems in steel mills to help control the temperature and
-                      reduce
-                      the formation of slag, which can be detrimental to the steelmaking process.</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>It is utilized in wastewater treatment processes within steel mills to help in the
-                      coagulation
-                      and flocculation of impurities, making it easier to remove them from the water.</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>In the handling of steel materials, sodium silicate can be applied as a dust suppressant to
-                      minimize airborne particulate matter.</li>
+                    <p><strong>Reducing Agent:</strong> KGGL Binder contains silica (SiO2), which can act as a reducing
+                      agent in the DRI process. During the reduction of iron ore to produce metallic iron, it can help
+                      in the removal of oxygen from the iron ore, facilitating the conversion of iron ore into DRI.</p>
+                    <p><strong>Fluxing Agent</strong> KGGL Binder can also function as a fluxing agent. It can modify
+                      the composition and viscosity of the slag produced during the DRI reduction process. This can be
+                      beneficial for controlling the slag's properties and ensuring it doesn't hinder the reduction
+                      reaction. </p>
+                    <p><strong>Temperature Control</strong> KGGL Binder can contribute to temperature control within the
+                      briquettes during the reduction process. It helps regulate the heat distribution, ensuring that
+                      the reduction reaction occurs efficiently without overheating or underheating the briquettes.</p>
+                  </div>
 
-                  </ul>
+                  <div class=" bg-primary-300 px-3 py-5 rounded-lg shadow-2xl text-blue-50">
+                    <h5 class="font-bold">Objective</h5>
+                    <p class="italic text-sm">Effective Utilization of Steel fines / Wastes will cut down the major cost
+                      for any Steel company.
+                      KGGL can offer a complete package right from Technical support in Briquetting & and pelletizing
+                      besides supplying the effective binding material.</p>
+                  </div>
+
 
                 </div>
               </div>
@@ -183,86 +295,57 @@
 
               <!-- product 3 -->
               <div class="flex flex-col md:flex-row gap-x-10 items-start">
-                <div class="">
-                  <img src="./../dist//images/soap.svg" class="md:w-4/5" alt="">
+
+
+                <div class="md:w-1/3 overflow-hidden">
+                  <div class="owl-industry1 owl-carousel industry">
+                    <div class=" ">
+                      <img src="./../dist/images/soap.svg" alt="">
+                    </div>
+                    <div class="">
+                      <img src="./../dist/images/soap2.png" alt="">
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Soap / Detergent and Hygiene</h2>
-                  <p>At Kiran Global Chems Ltd. we produce a host of industrial chemicals that have diverse application
-                    in the soap and detergent manufacturing companies. Our chemical products have been developed after
-                    extensive research to deliver highest efficacy, complementing the finished good for greatest
-                    effectiveness and quality.</p>
-                  <p>Adding silicates to synthetic detergents is beneficial because it softens water and is easily
-                    rinsed away.
-                    Due to the great suspending and anti-re-deposition qualities, they do not leave deposits on the
-                    fibers. </p>
-                  <ul>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>It is a building agent used in household cleaning solutions cleaning</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Improves washing property of the detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Prevents mineral deposits by removing water hardness</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Helps maintain suspension of the small dirt or greasy particles in washing liquid</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Helps control the viscosity in production of detergent powder of a desired density</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>An ingredient in the drying process in manufacture of detergent powder</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Acts as a binder to give appropriate degree of “hardness” to the spherical particles of
-                      detergent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Its alkalinity enables them to neutralize acidic stains, promote emulsification of fats and
-                      oils
-                      and disperse or solubilize proteins</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg>Stabilizes pH to the desired level</li>
+                  <h5 class="font-bold">Chemical solutions for the highest efficacy</h5>
+                  <p>At Kiran Geo, we produce a host of industrial chemicals that have diverse applications in soap,
+                    detergent, and hygiene chemicals manufacturing companies. Our chemical products have been developed
+                    after extensive research to deliver the highest efficacy, complementing the finished good for the
+                    greatest effectiveness and quality.
+                  </p>
+                  <p> Adding silicates to synthetic detergents is beneficial because it softens water and is easily
+                    rinsed away. Due to the great suspending and anti-re-deposition qualities, they do not leave
+                    deposits on the fibers.
+                  </p>
 
-                  </ul>
+
                 </div>
               </div>
 
-              <!-- product 5 -->
+              <!-- product 4 -->
               <div class="  flex flex-col  gap-x-10  md:flex-row-reverse items-start justify-between">
-                <div class="md:w-1/2 flex justify-end">
-                  <img src="./../dist//images/ceramic.svg" class="w-4/5" alt="">
+                <div class="md:w-1/3 overflow-hidden ">
+                  <div class="flex justify-end ">
+                    <div class="owl-industry1 owl-carousel industry-right ">
+                      <div class=" ml-auto">
+                        <img src="./../dist/images/ceramic.svg" alt="">
+                      </div>
+                      <div class="ml-auto">
+                        <img src="./../dist/images/ceramic2.png" alt="">
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Ceramic</h2>
-                  <p>Kiran Global Chems Ltd. supplies sodium silicate and potassium silicate as a key ingredient for
-                    manufacturing ceramics, both for industrial purpose and decorative use. The top quality sand used by
-                    us for manufacturing the silicates and blending with high quality chemicals enables us to provide
-                    assured quality to our clients.</p>
+                  <p>KGGL supplies sodium silicate as a key ingredient for manufacturing ceramics, both for industrial
+                    purpose and decorative use. </p>
+                  <h5 class="font-bold">Sodium silicate widely used in the Ceramic industry </h5>
                   <ul>
                     <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd"
@@ -322,18 +405,25 @@
 
 
 
-              <!-- product 4 -->
+              <!-- product 5 -->
               <div class="flex flex-col md:flex-row gap-x-10 items-start  justify-between">
-                <div class="flex ">
-                  <img src="./../dist/images/oil.png" class="w-4/5" alt="">
+                <div class="md:w-1/3 overflow-hidden">
+                  <div class="owl-industry1 owl-carousel industry">
+                    <div class=" ">
+                      <img src="./../dist/images/oil.png" alt="">
+                    </div>
+                    <div class="">
+                      <img src="./../dist/images/oil2.png" alt="">
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Oil Field and Drilling</h2>
-                  <p>At Kiran Global Chem Ltd., we offer sodium silicate and potassium silicate for cost efficient
-                    application for various applications on oil field and drilling fluids. We offer chemicals that are
-                    environment friendly and facilitate enhanced results in conformance, remediation and cementing. The
-                    application of sodium and potassium silicates is largely includes</p>
+                  <p>At KGGL we offer sodium and potassium silicate for cost-efficient application for various
+                    applications on oil fields and drilling fluids. We offer chemicals that are environment-friendly and
+                    facilitate enhanced results in conformance, remediation, and cementing. The application of sodium
+                    and potassium silicates largely includes</p>
                   <ul>
                     <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd"
@@ -363,8 +453,18 @@
 
               <!-- product 6 -->
               <div class="  flex flex-col  gap-x-10  md:flex-row-reverse items-start justify-between">
-                <div class="flex justify-end">
-                  <img src="./../dist/images/water.png" class="w-4/5" alt="">
+                <div class="md:w-1/3 overflow-hidden ">
+                  <div class="flex justify-end ">
+                    <div class="owl-industry1 owl-carousel industry-right ">
+                      <div class=" ml-auto">
+                        <img src="./../dist/images/water.png" alt="">
+                      </div>
+                      <div class=" ml-auto">
+                        <img src="./../dist/images/water2.png" alt="">
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
@@ -409,17 +509,23 @@
                 </div>
               </div>
 
-              <!-- product 8 -->
+              <!-- product 7 -->
               <div class="flex flex-col md:flex-row gap-x-10 items-start  justify-between">
-                <div class="md:w-1/2">
-                  <img src="./../dist//images/foundries.svg" class="w-4/5" alt="">
+                <div class="md:w-1/3 overflow-hidden">
+                  <div class="owl-industry1 owl-carousel industry">
+                    <div class="">
+                      <img src="./../dist/images/foundries.svg" alt="">
+                    </div>
+                    <div class="">
+                      <img src="./../dist/images/foundries2.png" alt="">
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Foundries</h2>
-                  <p>Kiran Global Chems Ltd. manufactures and supplies primary chemical agents for foundries across
-                    India and globally.Our industrial chemicals are used for a range of applications in treatment of
-                    metals.</p>
+                  <p>KGGL manufactures and supplies primary chemical agents for foundries across Pan-India and globally.
+                    Our industrial chemicals are used for a range of applications in the treatment of metals.</p>
                   <ul>
                     <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd"
@@ -446,48 +552,27 @@
               </div>
 
               <!-- product 8 -->
-              <div class=" flex flex-col  gap-x-10  md:flex-row-reverse items-start justify-between">
-                <div class="md:w-1/2 flex justify-end">
-                  <img src="./../dist//images/package.svg" class="w-4/5" alt="">
+              <div class=" flex flex-col  gap-x-10  md:flex-row-reverse items-center justify-between">
+                <div class="md:w-1/3 overflow-hidden ">
+                  <div class="flex justify-end ">
+                    <div class="owl-industry1 owl-carousel industry-right ">
+                      <div class=" ml-auto">
+                        <img src="./../dist/images/package.svg" alt="">
+                      </div>
+                      <div class=" ml-auto">
+                        <img src="./../dist/images/packaging2.png" alt="">
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Packing and Adhesives</h2>
-                  <p>The adhesives that are manufactured using chemical agents manufactured by us are known for their
-                    high binding propensity.The chemicals that we manufacture and supply for manufacturing adhesives
-                    are:</p>
-                  <ul>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> In the ammunitions industry, it is used to seal combustible nitrated paper to form a
-                      conical paper cartridge for holding black powder. It is used to seal lead ball or conical bullet
-                      with the open end of the paper cartridge</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> It is the only inorganic adhesive that offer high strength at an economic price and sets
-                      rapidly</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> It is used in making paper tubes, multi-layer boards and fibre drums</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> It is used as an exhaust system joint and crack sealer for muffler, tailpipes and
-                      resonators repair</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> It is used as a high temperature adhesive in critical joint</li>
+                  <p>The Adhesives that are manufactured using chemical agents manufactured by us are known for their
+                    high binding propensity. The inorganic chemicals that we manufacture used in adhesives offer high
+                    strength at an economic price and set rapidly , especially in the packing industry;</p>
 
-                  </ul>
 
                 </div>
               </div>
@@ -495,67 +580,37 @@
 
               <!-- product 9 -->
               <div class="flex flex-col md:flex-row gap-x-10 items-start  justify-between">
-                <div class="flex ">
-                  <img src="./../dist/images/concrete.png" class="w-4/5" alt="">
+                <div class="md:w-1/3 overflow-hidden">
+                  <div class="owl-industry1 owl-carousel industry">
+                    <div class=" ">
+                      <img src="./../dist/images/concrete.png" alt="">
+                    </div>
+                    <div class="">
+                      <img src="./../dist/images/concrete2.png" alt="">
+                    </div>
+                  </div>
                 </div>
 
                 <div class="product-div">
                   <h2>Concretes and General</h2>
-                  <p>Kiran Global Chem Ltd. offers highly effective and efficient chemical treatments for concrete and
-                    general masonry treatment. Our products are used extensively at various stage of manufacturing and
-                    application of concrete and in general masonry work</p>
+                  <p>KGGL offers highly effective and efficient chemical treatments for concrete and general masonry
+                    treatment. Our products are used extensively at various stages of manufacturing and application of
+                    concrete and in general masonry work
+                  </p>
+                  <p>The sodium Silicate we supply for Concrete and General Masonry treatment facilitates
+                  </p>
                   <ul>
                     <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd"
                           d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
                           clip-rule="evenodd" />
-                      </svg> As a curing agent, it is applied to the surface of fresh layer of concrete to extend its
-                      durability</li>
+                      </svg>Manufacturing specialty cement for drilling industry</li>
                     <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd"
                           d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
                           clip-rule="evenodd" />
-                      </svg> To treat the concrete after it is completely dry or hardened for better water resistance
-                      and
-                      longevity</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Chemical sealing of Concrete hardening against Grease and Dust Proofing</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> For Acid Resistance</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Significantly reduces porosity in most masonry products making them far more wearable and
-                      water
-                      repellent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Used as an alkali activator in geopolymer cement and concrete</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Apply a thin coat to unpainted plaster or concrete surface as a water repellent</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> To treat old concrete surfaces to provide a harder surface</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                          d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                          clip-rule="evenodd" />
-                      </svg> Acts as a penetrate into concrete and reacts with residual free lime to reduce porosity
-                    </li>
+                      </svg>For adding into dry cement admixtures to accelerate the set</li>
+
                   </ul>
 
                 </div>
@@ -579,7 +634,7 @@
 
   <script src="./../dist/jquery.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+  <script src="./../dist/owl.carousel.min.js"></script>
   <script src="./../dist/app.js"></script>
 
 
