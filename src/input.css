@@ -23,7 +23,7 @@
   }
 
   .submenu {
-    @apply absolute w-44  bg-white rounded left-0 top-6;
+    @apply absolute w-44  bg-white rounded left-0 top-6 shadow-md;
 
     & ul {
       @apply space-y-1 py-3;

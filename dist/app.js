@@ -152,3 +152,21 @@ $(function () {
     loop: true,
   });
 });
+
+function scrolldiv(event, divId) {
+  event.preventDefault();
+  //   var elem = document.getElementById(divId);
+  //   elem.scrollIntoView();
+
+  window.scrollTo(0, findPosition(document.getElementById(divId)));
+}
+
+function findPosition(obj) {
+  var currenttop = 0;
+  if (obj.offsetParent) {
+    do {
+      currenttop += obj.offsetTop - 50;
+    } while ((obj = obj.offsetParent));
+    return [currenttop];
+  }
+}
