@@ -4,7 +4,7 @@ $(function () {
       <div class="w-container space-y-10">
           <div class=" flex flex-col md:flex-row gap-5 md:gap-0 justify-between ">
               <div>
-                  <img src="./../dist/images/kggl-white-logo.png" alt="">
+                
               </div>
               <div class=" grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
                   <div class="flex  items-center  gap-x-2">
@@ -137,7 +137,7 @@ $(function () {
   $(".owl-banner").owlCarousel({
     items: 1,
     dots: true,
-    autoplay: true,
+    autoplay: false,
     autoplayTimeout: 10000,
     loop: true,
   });
@@ -170,3 +170,13 @@ function findPosition(obj) {
     return [currenttop];
   }
 }
+
+// function loadHeader() {
+//   fetch("header.html")
+//     .then((res) => res.text())
+//     .then((header) => {
+//       document.getElementById("header-placeholder").innerHTML = header;
+//     });
+// }
+
+// document.addEventListener("DOMContentLoaded", loadHeader);

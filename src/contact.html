@@ -4,23 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kiran Global</title>
     <link rel="stylesheet" href="./../dist/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 </head>
 
-<body>
+<body x-data="{industrySub: false, productSub:false, open:false}">
 
     <!-- top strip -->
-    <div class=" bg-primary-400 h-8 "></div>
+    <div class=" bg-primary-600 h-4"></div>
     <div id="navDiv">
-        <div class=" w-full  absolute z-10  ">
+        <div class=" w-full  absolute z-50  ">
             <!-- nav -->
-            <div class=" w-container " x-data="{ menu: false }">
-                <nav class="flex justify-between md:items-center py-4 ">
+            <div class=" " x-data="{ menu: false, atTop: false }">
+                <nav class="  flex justify-between md:items-center py-4 lg:px-10 mx-auto left-0 right-0 sticky-nav fixed z-50 transition-all "
+                    @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+                    :class="{ 'shadow-lg': atTop, ' text-white py-4 ': !atTop, 'bg-primary-600  text-indigo-800': atTop, 'top-0': atTop, 'py-2': atTop }">
                     <a href="#">
-                        <img src="./../dist/images/kggl-logo.svg" class="w-20 md:w-auto" alt="">
+                        <img src="./../dist/images/kggl-logo.png" class="w-20 md:w-auto"
+                            :class="{'w-10 md:w-24': atTop}" alt="">
                     </a>
                     <div class="relative flex items-center">
                         <div @click="menu = !menu" class="md:hidden">
@@ -38,8 +41,51 @@
 
                         <div class="nav hidden md:flex items-center">
                             <a href="index.html">Home</a>
-                            <a href="products.html">Products</a>
-                            <a href="industries.html">Industries</a>
+                            <a href="vision.html">Vision</a>
+
+                            <div class="relative" @mouseover="productSub = true" @mouseout="productSub = false">
+                                <a href="products.html">Products
+                                    <div class="submenu  w-96" x-show="productSub">
+                                        <ul>
+                                            <li><a href="products.html#product1">Sodium Silicate Liquid Grades: Alkaline
+                                                    / Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product2">Sodium Silicate Lumps: Alkaline /
+                                                    Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product4">Potassium Silicate K66 / K77</a></li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div class="relative" @mouseover="industrySub = true" @mouseout="industrySub = false">
+                                <a href="industries.html">Industries
+                                    <div class="submenu " x-show="industrySub">
+                                        <ul>
+                                            <li><a href="industries.html#tunnel">Tunneling</a></li>
+                                            <li><a href="industries.html#steel">Steel</a></li>
+                                            <li><a href="industries.html#soap">Detergent and Hygiene</a>
+                                            </li>
+                                            <li><a href="industries.html#ceramic">Ceramic</a></li>
+                                            <li><a href="industries.html#oil">Oil
+                                                    Field and Drilling</a>
+                                            </li>
+                                            <li><a href="industries.html#water">Water Treatment</a></li>
+                                            <li><a href="industries.html#foundries">Foundries</a></li>
+                                            <li><a href="industries.html#packing">Packing and
+                                                    Adhesives</a>
+                                            </li>
+                                            <li><a href="industries.html#concrete">Concretes and
+                                                    General</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
                             <a href="contact.html">Contact</a>
                             <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -52,6 +98,7 @@
 
                         <div class="nav" x-show="menu" @click.outside="menu = false">
                             <a href="index.html">Home</a>
+                            <a href="vision.html">Vision</a>
                             <a href="products.html">Products</a>
                             <a href="industries.html">Industries</a>
                             <a href="contact.html">Contact</a>
@@ -64,7 +111,6 @@
 
         </div>
     </div>
-
     <!-- banner -->
 
     <div class=" bg-gray-light ">
@@ -246,8 +292,9 @@
 
     <script src="./../dist/jquery.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+    <script src="./../dist/owl.carousel.min.js"></script>
     <script src="./../dist/app.js"></script>
+
 </body>
 
 </html>

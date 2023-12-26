@@ -12,62 +12,143 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 
-<body>
+<body x-data="{industrySub: false, productSub:false, open:false}">
 
     <!-- top strip -->
-    <div class=" bg-primary-400 h-4"></div>
-
-    <div class=" w-full  absolute z-10 ">
-        <!-- nav -->
-        <div class=" w-container " x-data="{ menu: false }">
-            <nav class="flex justify-between md:items-center py-4 ">
-                <a href="#">
-                    <img src="./../dist/images/kggl-logo.svg" class="w-20 md:w-auto" alt="">
-                </a>
-                <div class="relative flex items-center">
-                    <div @click="menu = !menu" class="md:hidden">
-                        <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                        <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-
-                    </div>
-
-                    <div class="nav hidden md:flex items-center">
-                        <a href="index.html">Home</a>
-                        <a href="products.html">Products</a>
-                        <a href="industries.html">Industries</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-4 h-4">
+    <div class=" bg-primary-600 h-4"></div>
+    <div id="navDiv">
+        <div class=" w-full  absolute z-50  ">
+            <!-- nav -->
+            <div class=" " x-data="{ menu: false, atTop: false }">
+                <nav class="  flex justify-between md:items-center py-4 lg:px-10 mx-auto left-0 right-0 sticky-nav fixed z-50 transition-all "
+                    @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+                    :class="{ 'shadow-lg': atTop, ' text-white py-4 ': !atTop, 'bg-primary-600  text-indigo-800': atTop, 'top-0': atTop, 'py-2': atTop }">
+                    <a href="#">
+                        <img src="./../dist/images/kggl-logo.png" class="w-20 md:w-auto"
+                            :class="{'w-10 md:w-24': atTop}" alt="">
+                    </a>
+                    <div class="relative flex items-center">
+                        <div @click="menu = !menu" class="md:hidden">
+                            <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
-                        </a>
-                    </div>
+                            <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
 
-                    <div class="nav" x-show="menu" @click.outside="menu = false">
-                        <a href="index.html">Home</a>
-                        <a href="products.html">Products</a>
-                        <a href="industries.html">Industries</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="#">Company Brochure</a>
+                        </div>
+
+                        <div class="nav hidden md:flex items-center">
+                            <a href="index.html">Home</a>
+                            <a href="vision.html">Vision</a>
+
+                            <div class="relative" @mouseover="productSub = true" @mouseout="productSub = false">
+                                <a href="products.html">Products
+                                    <div class="submenu  w-96" x-show="productSub">
+                                        <ul>
+                                            <li><a href="products.html#product1">Sodium Silicate Liquid Grades: Alkaline
+                                                    / Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product2">Sodium Silicate Lumps: Alkaline /
+                                                    Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product4">Potassium Silicate K66 / K77</a></li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div class="relative" @mouseover="industrySub = true" @mouseout="industrySub = false">
+                                <a href="industries.html">Industries
+                                    <div class="submenu " x-show="industrySub">
+                                        <ul>
+                                            <li><a href="industries.html#tunnel">Tunneling</a></li>
+                                            <li><a href="industries.html#steel">Steel</a></li>
+                                            <li><a href="industries.html#soap">Detergent and Hygiene</a>
+                                            </li>
+                                            <li><a href="industries.html#ceramic">Ceramic</a></li>
+                                            <li><a href="industries.html#oil">Oil
+                                                    Field and Drilling</a>
+                                            </li>
+                                            <li><a href="industries.html#water">Water Treatment</a></li>
+                                            <li><a href="industries.html#foundries">Foundries</a></li>
+                                            <li><a href="industries.html#packing">Packing and
+                                                    Adhesives</a>
+                                            </li>
+                                            <li><a href="industries.html#concrete">Concretes and
+                                                    General</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <a href="contact.html">Contact</a>
+                            <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="nav" x-show="menu" @click.outside="menu = false">
+                            <a href="index.html">Home</a>
+                            <a href="vision.html">Vision</a>
+                            <a href="products.html">Products</a>
+                            <a href="industries.html">Industries</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="#">Company Brochure</a>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
+            <!-- nav -->
+
         </div>
     </div>
+
+
     <!-- banner -->
 
 
     <div class=" bg-gray-light transition  overflow-hidden">
         <div class="owl-carousel owl-banner">
+
+            <!-- item-1 -->
+            <div class=" main-banner">
+                <img src="./../dist//images/banner-1.png" alt="">
+                <div class=" banner-item ">
+                    <div class="  w-full ">
+                        <div class="w-container">
+
+                            <!-- content -->
+                            <div class="banner-content">
+                                <div class=" space-y-4">
+                                    <div class=" banner-content-box">
+                                        <h1 class=" banner-subcontent">Kiran-Geo Silicate</h1>
+                                        <h1 class="banner-heading">Renowned Silicate Manufacturers, Since Decade </h1>
+                                        <h6 class=" banner-subcontent">Welcome to Kiran Geo - your trusted partner in
+                                            Silicate manufacturing.</h6>
+                                        <div class="banner-button">
+                                            <button class=" btn btn-yellow">Explore our products</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
             <!-- item-2 -->
             <div class=" main-banner">
@@ -105,34 +186,7 @@
             </div>
 
 
-            <!-- item-2 -->
-            <div class=" main-banner">
-                <img src="./../dist//images/banner-1.png" alt="">
-                <div class=" banner-item ">
-                    <div class="  w-full ">
-                        <div class="w-container">
 
-                            <!-- content -->
-                            <div class="banner-content">
-                                <div class=" space-y-4">
-                                    <div class=" banner-content-box">
-                                        <h1 class=" banner-subcontent">Kiran-Geo Silicate</h1>
-                                        <h1 class="banner-heading">Renowned Silicate Manufacturers, Since 1976</h1>
-                                        <h6 class=" banner-subcontent">Welcome to Kiran Geo - your trusted partner in
-                                            Silicate manufacturing.</h6>
-                                        <div class="banner-button">
-                                            <button class=" btn btn-yellow">Explore our products</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
 
             <!-- item-3 -->
@@ -191,14 +245,14 @@
                                 <div class="title">
                                     Decades of Expertise
                                 </div>
-                                <div>With a legacy spanning over four decades, Kiran Geo has earned its reputation as a
+                                <div>With a legacy spanning for decades, Kiran Geo has earned its reputation as a
                                     global
                                     leader in the production of Sodium and Potassium Silicates.</div>
                             </div>
                         </div>
 
                         <div class="hexa">
-                            <img src="./../dist/images/tailor-made.png" alt="">
+                            <img src="./../dist/images/quality.png" alt="">
                             <div class="card">
 
                                 <div class="title">
@@ -211,7 +265,7 @@
                         </div>
 
                         <div class="hexa">
-                            <img src="./../dist/images/quality.png" alt="">
+                            <img src="./../dist/images/tailor-made-2.png" alt="">
                             <div class="card">
 
                                 <div class="title">
@@ -244,11 +298,15 @@
                     <div class=" text-2xl">We provide innovative and cost-effective industrial solutions.</div>
                     <div class="text-lg">Kiran Geo is a leading manufacturer of Sodium and Potassium Silicate in India.
                     </div>
-                    <div>Our customized, eco-friendly silicates are essential in industries like tunneling, steel,
-                        textiles, and more. We're dedicated to high-quality solutions tailored to specific industry
-                        needs. Recent research and case studies confirm Sodium Silicate's indispensable role, and our
-                        commitment to custom grades positions us as a trusted partner in innovation and sustainability
-                        across various sectors.</div>
+                    <div>Our customized, eco-friendly Water-soluble Green silicates are essential in industries like
+                        tunneling, steel,
+                        detergent & hygiene, ceramic, oil
+                        field & drilling, water treatment, foundries, packing &
+                        adhesives, and concretes &
+                        general. We're dedicated to high-quality solutions tailored to specific industry
+                        needs. Recent research and case studies confirm Sodium Silicate's indispensable role. In today’s
+                        industrial requirements, we are known to provide a customized silicate solution to various
+                        industries in a sustainable and eco-friendly way.</div>
 
                 </div>
             </div>
@@ -258,95 +316,7 @@
         </div>
     </div>
 
-    <!-- certificate -->
 
-    <div class="bg-[url(./../dist/images/certificate-bg.png)] bg-no-repeat bg-cover bg-bottom md:h-[600px] w-full">
-        <div class="max-w-4xl mx-auto md:h-full p-7 md:p-0 ">
-            <div class="  flex justify-between items-center h-full gap-x-6 md:gap-0">
-                <div class="md:h-96">
-                    <img src="./../dist/images/certificate.png" class="md:h-full" alt="">
-                </div>
-                <div class="md:h-96">
-                    <img src="./../dist/images/iso.png" class="md:h-full" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- certificate -->
-
-    <!-- vission -->
-    <div class="md:h-56 bg-primary-400 relative">
-        <div class="flex ">
-            <div class=" w-[30%] relative hidden md:block">
-                <div class=" absolute bottom-0">
-                    <img src="./../dist/images/pattern.svg" class="h-44" alt="">
-                </div>
-            </div>
-
-            <div class=" relative flex-1  bg-white  ">
-                <div class="absolute right-0 opacity-30 md:opacity-0"><img src="./../dist/images/slicate-triangle.png"
-                        class="md:h-56" alt="">
-                </div>
-                <div class=" bg-white flex">
-                    <div class="h-56 relative -left-16 z-10 ">
-                        <img class="h-full" src="./../dist/images/white-triangle.png" alt="">
-                    </div>
-                    <div class="py-16 md:h-56  md:w-2/3 mr-0 md:ml-10 space-y-3">
-                        <div class=" text-2xl text-center">Vision</div>
-                        <p class=" ">
-                            To be a globally renowned organization, delivering exceptional products and services,
-                            ensuring stakeholder satisfaction, and providing unparalleled customer service.
-                        </p>
-                    </div>
-
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- mission -->
-    <div class="md:h-56 bg-primary-400 relative">
-        <div class="flex ">
-
-
-            <div class=" relative flex-1    ">
-                <div class="absolute left-0 rotate-180 hidden md:block"><img src="./../dist/images/slicate-triangle.svg"
-                        class="md:h-56" alt=""></div>
-                <div class=" bg-primary-400   ">
-                    <div class=" flex px-10 md:px-0">
-                        <div class="py-10 md:h-56 mr-0 w-full  md:w-[70%] ml-auto  space-y-3 text-white">
-                            <div class=" text-2xl text-center">Mission</div>
-                            <p class=" ">
-                                Our mission is to nurture quality and consistency as the cornerstones of sustainability,
-                                provide maximum value to our customers, empower our employees to achieve their full
-                                potential, modernize infrastructure for timely service, drive innovation for the highest
-                                ROI, and champion fairness in our business partnerships </p>
-
-                        </div>
-
-                        <div class=" hidden md:block md:h-56 relative -right-16 z-10 ">
-                            <img class="h-full" src="./../dist/images/blue-tri.png" alt="">
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-            </div>
-
-            <div class=" hidden md:block w-[30%] relative bg-gray-50">
-                <div class=" absolute bottom-0">
-                    <img src="./../dist/images/pattern.svg" class="h-44" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- mission -->
 
 
     <!-- footer -->

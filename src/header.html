@@ -1,0 +1,89 @@
+<div class=" bg-primary-400 h-4 "></div>
+<div id="navDiv">
+    <div class=" w-full  absolute z-10  ">
+        <!-- nav -->
+        <div class=" w-container " x-data="{ menu: false, atTop: false }">
+            <nav class=" w-container flex justify-between md:items-center py-4  mx-auto left-0 right-0 sticky-nav fixed z-50 transition-all "
+                @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+                :class="{ 'shadow-lg': atTop, ' text-white py-4 ': !atTop, 'bg-primary-300  text-indigo-800': atTop, 'top-0': atTop, 'py-2': atTop }">
+                <a href="#">
+                    <img src="./../dist/images/kggl-logo.svg" class="w-20 md:w-auto" :class="{'w-10 md:w-24': atTop}"
+                        alt="">
+                </a>
+                <div class="relative flex items-center">
+                    <div @click="menu = !menu" class="md:hidden">
+                        <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+
+                    <div class="nav hidden md:flex items-center">
+                        <a href="index.html">Home</a>
+
+                        <div class="relative" @mouseover="productSub = true" @mouseout="productSub = false">
+                            <a href="products.html">Products
+                                <div class="submenu " x-show="productSub">
+                                    <ul>
+                                        <li><a href="#" onclick="scrolldiv(event, 'tunnel')">Silicate 1</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'steel')">Silicate 2</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'soap')">Silicate 3</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'ceramic')">Silicate 4</a></li>
+
+                                    </ul>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="relative" @mouseover="industrySub = true" @mouseout="industrySub = false">
+                            <a href="industries.html">Industries
+                                <div class="submenu " x-show="industrySub">
+                                    <ul>
+                                        <li><a href="#" onclick="scrolldiv(event, 'tunnel')">Tunneling</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'steel')">Steel</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'soap')">Detergent and Hygiene</a>
+                                        </li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'ceramic')">Ceramic</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'oil')">Oil Field and Drilling</a>
+                                        </li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'water')">Water Treatment</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'foundries')">Foundries</a></li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'packing')">Packing and Adhesives</a>
+                                        </li>
+                                        <li><a href="#" onclick="scrolldiv(event, 'concrete')">Concretes and General</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </a>
+                        </div>
+                        <a href="contact.html">Contact</a>
+                        <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="nav" x-show="menu" @click.outside="menu = false">
+                        <a href="index.html">Home</a>
+                        <a href="products.html">Products</a>
+                        <a href="industries.html">Industries</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Company Brochure</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- nav -->
+
+    </div>
+</div>

@@ -170,7 +170,7 @@ footer {
 }
 
 .product-div {
-  @apply flex flex-col space-y-10 md:w-3/5;
+  @apply flex flex-col space-y-5 md:w-3/5;
 
   & h2 {
     @apply text-2xl font-semibold;

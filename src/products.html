@@ -4,71 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kiran Global</title>
     <link rel="stylesheet" href="./../dist/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 </head>
 
-<body x-data="{open: false}">
+<body x-data="{industrySub: false, productSub:false, open:false}">
 
     <!-- top strip -->
-    <div class=" bg-primary-400 h-8 "></div>
+    <div class=" bg-primary-600 h-4"></div>
+    <div id="navDiv">
+        <div class=" w-full  absolute z-50  ">
+            <!-- nav -->
+            <div class=" " x-data="{ menu: false, atTop: false }">
+                <nav class="  flex justify-between md:items-center py-4 lg:px-10 mx-auto left-0 right-0 sticky-nav fixed z-50 transition-all "
+                    @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+                    :class="{ 'shadow-lg': atTop, ' text-white py-4 ': !atTop, 'bg-primary-600  text-indigo-800': atTop, 'top-0': atTop, 'py-2': atTop }">
+                    <a href="#">
+                        <img src="./../dist/images/kggl-logo.png" class="w-20 md:w-auto"
+                            :class="{'w-10 md:w-24': atTop}" alt="">
+                    </a>
+                    <div class="relative flex items-center">
+                        <div @click="menu = !menu" class="md:hidden">
+                            <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
 
+                        </div>
+
+                        <div class="nav hidden md:flex items-center">
+                            <a href="index.html">Home</a>
+                            <a href="vision.html">Vision</a>
+
+                            <div class="relative" @mouseover="productSub = true" @mouseout="productSub = false">
+                                <a href="products.html">Products
+                                    <div class="submenu  w-96" x-show="productSub">
+                                        <ul>
+                                            <li><a href="products.html#product1">Sodium Silicate Liquid Grades: Alkaline
+                                                    / Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product2">Sodium Silicate Lumps: Alkaline /
+                                                    Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product4">Potassium Silicate K66 / K77</a></li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div class="relative" @mouseover="industrySub = true" @mouseout="industrySub = false">
+                                <a href="industries.html">Industries
+                                    <div class="submenu " x-show="industrySub">
+                                        <ul>
+                                            <li><a href="industries.html#tunnel">Tunneling</a></li>
+                                            <li><a href="industries.html#steel">Steel</a></li>
+                                            <li><a href="industries.html#soap">Detergent and Hygiene</a>
+                                            </li>
+                                            <li><a href="industries.html#ceramic">Ceramic</a></li>
+                                            <li><a href="industries.html#oil">Oil
+                                                    Field and Drilling</a>
+                                            </li>
+                                            <li><a href="industries.html#water">Water Treatment</a></li>
+                                            <li><a href="industries.html#foundries">Foundries</a></li>
+                                            <li><a href="industries.html#packing">Packing and
+                                                    Adhesives</a>
+                                            </li>
+                                            <li><a href="industries.html#concrete">Concretes and
+                                                    General</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <a href="contact.html">Contact</a>
+                            <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="nav" x-show="menu" @click.outside="menu = false">
+                            <a href="index.html">Home</a>
+                            <a href="vision.html">Vision</a>
+                            <a href="products.html">Products</a>
+                            <a href="industries.html">Industries</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="#">Company Brochure</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- nav -->
+
+        </div>
+    </div>
 
     <!-- banner -->
 
     <div class="">
-        <div id="navDiv">
-            <div class=" w-full  absolute z-10  ">
-                <!-- nav -->
-                <div class=" w-container " x-data="{ menu: false }">
-                    <nav class="flex justify-between md:items-center py-4 ">
-                        <a href="#">
-                            <img src="./../dist/images/kggl-logo.svg" class="w-20 md:w-auto" alt="">
-                        </a>
-                        <div class="relative flex items-center">
-                            <div @click="menu = !menu" class="md:hidden">
-                                <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                </svg>
-                                <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
 
-                            </div>
-
-                            <div class="nav hidden md:flex items-center">
-                                <a href="index.html">Home</a>
-                                <a href="products.html">Products</a>
-                                <a href="industries.html">Industries</a>
-                                <a href="contact.html">Contact</a>
-                                <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="nav" x-show="menu" @click.outside="menu = false">
-                                <a href="index.html">Home</a>
-                                <a href="products.html">Products</a>
-                                <a href="industries.html">Industries</a>
-                                <a href="contact.html">Contact</a>
-                                <a href="#">Company Brochure</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <!-- nav -->
-
-            </div>
-        </div>
 
         <div class=" relative flex justify-center">
             <div class=" absolute w-full   h-full ">
@@ -77,38 +124,10 @@
 
 
                     <!-- content -->
-                    <div class="banner-content  flex items-center md:w-1/2">
+                    <div class="banner-content  flex items-center justify-center md:w-1/2 ">
                         <div class="banner-content-box h-48 md:h-auto">
-                            <h1 class="inner-banner-heading h-full flex  items-center md:flex-none">Our Products</h1>
-                            <div class="hidden md:block space-y-2">
-                                <div class="strip-main ">
-                                    <a href="./products.html#product1">
-                                        <div class=" flex group">
-                                            <div class=" banner-strip"> Silicate grade 1</div>
-                                            <div class="banner-strip-arrow"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="strip-main">
-                                    <a href="./products.html#product2">
-                                        <div class=" flex group">
-                                            <div class=" banner-strip"> Silicate grade 2</div>
-                                            <div class="banner-strip-arrow"></div>
-                                        </div>
-                                    </a>
+                            <h1 class="inner-banner-heading h-full flex  items-start md:flex-none">Our Products</h1>
 
-                                </div>
-
-                                <div class="strip-main">
-                                    <a href="./products.html#product3">
-
-                                        <div class=" flex group">
-                                            <div class=" banner-strip"> Silicate grade 3</div>
-                                            <div class="banner-strip-arrow"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
@@ -121,10 +140,6 @@
         </div>
 
 
-
-        <div class="product-banner-image absolute w-32 right-0 md:right-20 md:top-72 top-20 md:w-96">
-            <img src="./../dist/images/product-3.png" alt="">
-        </div>
     </div>
 
     <!-- content -->
@@ -137,112 +152,328 @@
                             <!-- product 1 -->
                             <div class=" flex flex-col md:flex-row gap-x-10 items-center" id="product1">
                                 <div class="md:w-1/2">
-                                    <img src="./../dist//images/product-1.svg" class="w-3/4 drop-shadow-2xl" alt="">
+                                    <img src="./../dist//images/grade-1.png" class="w-3/4 drop-shadow-2xl" alt="">
                                 </div>
 
                                 <div class="product-div">
-                                    <h2 class="text-center md:text-left">Silicate grade 1</h2>
-                                    <p>To be a globally renowned organization, delivering exceptional products and
-                                        services,
-                                        ensuring
-                                        stakeholder satisfaction, and providing unparalleled customer service.</p>
-                                    <ul>
-                                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            It is a building agent used in household cleaning solutions cleaning</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Improves washing property of the detergent</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Prevents mineral deposits by removing water hardness</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Helps maintain suspension of the small dirt or greasy particles in
-                                            washing
-                                            liquid
-                                        </li>
-                                    </ul>
+                                    <h1>Sodium Silicate Liquid Grades:</h1>
+                                    <h2 class="text-center md:text-left">Alkaline Grade specifications : 1: 2.0  / 1:
+                                        2.20 / 1: 2.40</h2>
+                                    <table class="min-w-full divide-y divide-gray-300 border shadow-xl">
+                                        <thead class="bg-gray-light ">
+                                            <td class=" pl-3 py-3">Particular</td>
+                                            <td>Na<sub>2</sub>O</td>
+                                            <td>SiO<sub>2</sub></td>
+                                            <td>Baume</td>
+                                            <td>Weight Ratio T.S</td>
+                                        </thead>
 
-                                    <div>
-                                        <button @click="open = true" class="btn btn-yellow">View Specification
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                            </svg>
+                                        <tbody class="divide-y divide-gray-200 bg-white">
+                                            <tr class=" bg-yellow-light">
+                                                <td class="pl-3">
+                                                    1:2.00
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    18.0 – 19.0 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    36.00 – 37.00 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    60 - 62</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.00 + 0.1 55 min</td>
 
-                                        </button>
-                                    </div>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:2.20
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    16.5 – 17.5 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    36.50 – 37.50 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    56 - 58</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.20 +-0.1 53 min</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:2.40
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    14.5 – 15.5 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    34.50 – 35.50%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    52 - 54</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.40 + -0.1 49
+                                                    min</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1: 2.40*
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    13.00 –
+                                                    14.0%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    31.5 – 32.00%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    50 - 52</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.40 + 0.1 45
+                                                    Min</td>
+
+                                            </tr>
+
+                                            <!-- More people... -->
+                                        </tbody>
+                                    </table>
+
+
+
+                                </div>
+                            </div>
+
+
+                            <!-- product 1 -->
+                            <div class=" flex flex-col md:flex-row gap-x-10 items-center" id="product1">
+                                <div class="md:w-1/2">
+                                </div>
+
+                                <div class="product-div">
+
+                                    <h2 class="text-center md:text-left">Neutral Grade Specifications: 1:3.0 / 1:3.20 /
+                                        1:3.40</h2>
+                                    <table class="min-w-full divide-y divide-gray-300 border shadow-xl">
+                                        <thead class="bg-gray-light ">
+                                            <td class=" pl-3 py-3">Particular</td>
+                                            <td>Na<sub>2</sub>O</td>
+                                            <td>SiO<sub>2</sub></td>
+                                            <td>Baume</td>
+                                            <td>Weight Ratio T.S</td>
+                                        </thead>
+
+                                        <tbody class="divide-y divide-gray-200 bg-white">
+                                            <tr class=" bg-yellow-light">
+                                                <td class="pl-3">
+                                                    1:3.00
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    8.50 – 9.00
+                                                    %/td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    26.0 – 27.00
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    36 - 38</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:3.00 +/- 0.1 35
+                                                    Min</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:3.20
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    8.50 – 9.00
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    27.50 – 28.00
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    38 - 40</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:3.20 +/-0.1 35
+                                                    Min</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:3.40
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    7.50 – 8.00
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    26.00 – 27.00
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    40 - 42</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:3.40 +/-0.1 34
+                                                    Min</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1: 2.40*
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    13.00 –
+                                                    14.0%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    31.5 – 32.00%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    50 - 52</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.40 + 0.1 45
+                                                    Min</td>
+
+                                            </tr>
+
+                                            <!-- More people... -->
+                                        </tbody>
+                                    </table>
+
+
+
                                 </div>
                             </div>
 
                             <!-- product 2 -->
                             <div class=" flex flex-col  gap-x-10 md:flex-row-reverse items-center" id="product2">
-                                <div class="md:w-1/2">
-                                    <img src="./../dist//images/product-2.png" class="w-3/4 drop-shadow-2xl" alt="">
+                                <div class="md:w-1/2 flex justify-end">
+                                    <img src="./../dist/images/product-2.png" class="w-3/4 drop-shadow-2xl" alt="">
                                 </div>
 
                                 <div class="product-div">
-                                    <h2 class="text-center md:text-left">Silicate grade 2</h2>
-                                    <p>To be a globally renowned organization, delivering exceptional products and
-                                        services,
-                                        ensuring
-                                        stakeholder satisfaction, and providing unparalleled customer service.</p>
-                                    <ul>
-                                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            It is a building agent used in household cleaning solutions cleaning</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Improves washing property of the detergent</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Prevents mineral deposits by removing water hardness</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Helps maintain suspension of the small dirt or greasy particles in
-                                            washing
-                                            liquid
-                                        </li>
-                                    </ul>
+                                    <h1>Sodium Silicate Lumps Specifications</h1>
+                                    <h2 class="text-center md:text-left">Alkaline Lumps : 1: 2.0 / 1: 2.20 / 1: 2.40
+                                    </h2>
 
-                                    <div>
-                                        <button @click="open = true" class="btn btn-yellow">View Specification
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                            </svg>
+                                    <table class="min-w-full divide-y divide-gray-300 border shadow-xl">
+                                        <thead class="bg-gray-light ">
+                                            <td class=" pl-3 py-3">Particular</td>
+                                            <td>Na<sub>2</sub>O</td>
+                                            <td>SiO<sub>2</sub></td>
+                                            <td>Weight Ratio</td>
+                                            <td>Tot Solid</td>
+                                        </thead>
 
-                                        </button>
-                                    </div>
+                                        <tbody class="divide-y divide-gray-200 bg-white">
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:2.00
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    33.00 + 0.50
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    66.50 + 0.50 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.00 +/- 0.1</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    99.70</td>
+
+                                            </tr>
+
+                                            <tr class=" bg-yellow-light">
+                                                <td class="pl-3">
+                                                    1:2.20
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    31.50 + 0.50
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    68.50 + 0.50 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.20 +/-0.1</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    99.70</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:2.40
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    29.50 + 0.50
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    70.50 + 0.50 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.40 +/-0.1</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    99.70</td>
+
+                                            </tr>
+
+
+                                            <!-- More people... -->
+                                        </tbody>
+                                    </table>
+
+                                    <h2 class="text-center md:text-left">Neutral : 1: 3.0 / 1: 3.20/ 1:3.40
+                                    </h2>
+
+                                    <table class="min-w-full divide-y divide-gray-300 border shadow-xl">
+                                        <thead class="bg-gray-light ">
+                                            <td class=" pl-3 py-3">Particular</td>
+                                            <td>Na<sub>2</sub>O</td>
+                                            <td>SiO<sub>2</sub></td>
+                                            <td>Weight Ratio</td>
+                                            <td>Tot Solid</td>
+                                        </thead>
+
+                                        <tbody class="divide-y divide-gray-200 bg-white">
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:3.00
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    24.5 + 0.50 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    75.00 + 0.50 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:3.00</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    99.70</td>
+
+                                            </tr>
+
+                                            <tr class=" bg-yellow-light">
+                                                <td class="pl-3">
+                                                    1:3.20
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    23.50 + 0.50
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    76.00 + 0.50 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:3.2</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    99.70</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="pl-3">
+                                                    1:3.40
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    22.00 + 0.50%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    77.00 + 050 %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:3.4</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    99.70</td>
+
+                                            </tr>
+
+
+                                            <!-- More people... -->
+                                        </tbody>
+                                    </table>
+
+
                                 </div>
                             </div>
 
@@ -250,58 +481,68 @@
                             <!-- product 3 -->
                             <div class=" flex flex-col md:flex-row gap-x-10 items-center" id="product3">
                                 <div class=" md:w-1/2">
-                                    <img src="./../dist/images/product-3.png" class="w-3/4 drop-shadow-2xl" alt="">
+                                    <img src="./../dist/images/grade-3.png" class="w-3/4 drop-shadow-2xl" alt="">
                                 </div>
 
                                 <div class="product-div">
-                                    <h2 class="text-center md:text-left">Silicate grade 3</h2>
-                                    <p>To be a globally renowned organization, delivering exceptional products and
-                                        services,
-                                        ensuring
-                                        stakeholder satisfaction, and providing unparalleled customer service.</p>
-                                    <ul>
-                                        <li> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            It is a building agent used in household cleaning solutions cleaning</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Improves washing property of the detergent</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Prevents mineral deposits by removing water hardness</li>
-                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                                                    clip-rule="evenodd" />
-                                            </svg> Helps maintain suspension of the small dirt or greasy particles in
-                                            washing
-                                            liquid
-                                        </li>
-                                    </ul>
+                                    <h2 class="text-center md:text-left">Potassium silicate Liquid Grades: K66 &amp; K77
+                                    </h2>
 
-                                    <div>
-                                        <button @click="open = true" class="btn btn-yellow">View Specification
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                            </svg>
+                                    <table class="min-w-full divide-y divide-gray-300 border shadow-xl">
+                                        <thead class="bg-gray-light ">
+                                            <td class=" pl-3 py-3">Grade</td>
+                                            <td>Specific gr</td>
+                                            <td>Baume</td>
+                                            <td>K2O</td>
+                                            <td>SiO2</td>
+                                            <td>Weight Ratio</td>
+                                        </thead>
 
-                                        </button>
-                                    </div>
+                                        <tbody class="divide-y divide-gray-200 bg-white">
+                                            <tr>
+                                                <td class="pl-3">
+                                                    K66
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1.32-1.34</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    35 – 37</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    10.5 –
+                                                    12%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    23 – 26
+                                                    %</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.1 + 0.1</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td class="pl-3">
+                                                    K76
+                                                </td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1.36-1.40</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    38 -42</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    12 – 14%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    26 – 28%</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-black">
+                                                    1:2.1 + 0.1</td>
+
+                                            </tr>
+
+
+                                            <!-- More people... -->
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
+
+
 
 
                         </div>

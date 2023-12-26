@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiran Global</title>
+
+    <link rel="stylesheet" href="./../dist/output.css">
+    <link rel="stylesheet" href="./../dist/owl.carousel.min.css">
+    <link rel="stylesheet" href="./../dist/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body x-data="{industrySub: false, productSub:false, open:false}">
+
+    <!-- top strip -->
+    <div class=" bg-primary-600 h-4"></div>
+    <!-- nav -->
+    <div id="navDiv">
+        <div class=" w-full  absolute z-50  ">
+            <!-- nav -->
+            <div class=" " x-data="{ menu: false, atTop: false }">
+                <nav class="  flex justify-between md:items-center py-4 lg:px-10 mx-auto left-0 right-0 sticky-nav fixed z-50 transition-all "
+                    @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+                    :class="{ 'shadow-lg': atTop, ' text-white py-4 ': !atTop, 'bg-primary-600  text-indigo-800': atTop, 'top-0': atTop, 'py-2': atTop }">
+                    <a href="#">
+                        <img src="./../dist/images/kggl-logo.png" class="w-20 md:w-auto"
+                            :class="{'w-10 md:w-24': atTop}" alt="">
+                    </a>
+                    <div class="relative flex items-center">
+                        <div @click="menu = !menu" class="md:hidden">
+                            <svg x-show="!menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <svg x-show="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+
+                        </div>
+
+                        <div class="nav hidden md:flex items-center">
+                            <a href="index.html">Home</a>
+                            <a href="vision.html">Vision</a>
+
+                            <div class="relative" @mouseover="productSub = true" @mouseout="productSub = false">
+                                <a href="products.html">Products
+                                    <div class="submenu  w-96" x-show="productSub">
+                                        <ul>
+                                            <li><a href="products.html#product1">Sodium Silicate Liquid Grades: Alkaline
+                                                    / Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product2">Sodium Silicate Lumps: Alkaline /
+                                                    Neutral
+                                                </a></li>
+
+                                            <li><a href="products.html#product4">Potassium Silicate K66 / K77</a></li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div class="relative" @mouseover="industrySub = true" @mouseout="industrySub = false">
+                                <a href="industries.html">Industries
+                                    <div class="submenu " x-show="industrySub">
+                                        <ul>
+                                            <li><a href="industries.html#tunnel">Tunneling</a></li>
+                                            <li><a href="industries.html#steel">Steel</a></li>
+                                            <li><a href="industries.html#soap">Detergent and Hygiene</a>
+                                            </li>
+                                            <li><a href="industries.html#ceramic">Ceramic</a></li>
+                                            <li><a href="industries.html#oil">Oil
+                                                    Field and Drilling</a>
+                                            </li>
+                                            <li><a href="industries.html#water">Water Treatment</a></li>
+                                            <li><a href="industries.html#foundries">Foundries</a></li>
+                                            <li><a href="industries.html#packing">Packing and
+                                                    Adhesives</a>
+                                            </li>
+                                            <li><a href="industries.html#concrete">Concretes and
+                                                    General</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <a href="contact.html">Contact</a>
+                            <a href="#" class="flex items-center gap-x-1">Download Company Brochure <svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="nav" x-show="menu" @click.outside="menu = false">
+                            <a href="index.html">Home</a>
+                            <a href="vision.html">Vision</a>
+                            <a href="products.html">Products</a>
+                            <a href="industries.html">Industries</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="#">Company Brochure</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- nav -->
+
+        </div>
+    </div>
+    <!-- nav -->
+
+
+
+
+
+
+    <!-- certificate -->
+
+    <div class="bg-[url(./../dist/images/certificate-bg.png)] bg-no-repeat bg-cover bg-bottom md:h-[600px] w-full">
+        <div class="max-w-6xl mx-auto md:h-full p-7 md:p-0 ">
+            <div class="  flex items-center h-full gap-x-6 md:gap-0 justify-center">
+                <div class="md:h-96 flex gap-x-20">
+                    <!-- <img src="./../dist/images/certificate.png" class="md:h-full" alt=""> -->
+                    <img src="./../dist/images/certificate-2.png" alt="">
+                    <img src="./../dist/images/certificate-3.png" alt="">
+                    <img src="./../dist/images/iso.png" class="md:h-full" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- certificate -->
+
+    <!-- vission -->
+    <div class="md:h-56 bg-[#0A1931] relative">
+        <div class="flex ">
+            <div class=" w-[30%] relative hidden md:block">
+                <div class=" absolute bottom-0">
+                    <img src="./../dist/images/pattern.svg" class="h-44" alt="">
+                </div>
+            </div>
+
+            <div class=" relative flex-1  bg-white  ">
+                <div class="absolute right-0 opacity-30 md:opacity-0"><img src="./../dist/images/slicate-triangle.png"
+                        class="md:h-56" alt="">
+                </div>
+                <div class=" bg-white flex">
+                    <div class="h-56 relative -left-16 z-10 ">
+                        <img class="h-full" src="./../dist/images/white-triangle.png" alt="">
+                    </div>
+                    <div class="py-16 md:h-56  md:w-2/3 mr-0 md:ml-10 space-y-3">
+                        <div class=" text-2xl text-center">Vision</div>
+                        <p class=" ">
+                            Manufacturing and Offering Products, that are Corban Free and ECO Friendly.
+                            Our Real vision is to contribute essential at the same time non-polluting green products to
+                            the Mankind.
+
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- mission -->
+    <div class="md:h-56 bg-[#0A1931] relative">
+        <div class="flex ">
+
+
+            <div class=" relative flex-1    ">
+                <div class="absolute left-0 rotate-180 hidden md:block"><img src="./../dist/images/slicate-triangle.svg"
+                        class="md:h-56" alt=""></div>
+                <div class=" bg-[#0A1931]   ">
+                    <div class=" flex px-10 md:px-0">
+                        <div class="py-10 md:h-56 mr-0 w-full  md:w-[70%] ml-auto  space-y-3 text-white">
+                            <div class=" text-2xl text-center">Mission</div>
+                            <p class=" ">
+                                Our mission is to nurture Quality, Consistency, and eco-friendly as the cornerstones for
+                                suitability,
+                                provide maximum value to our customers, empower our employees to achieve their full
+                                potential, modernize infrastructure for timely service, drive innovation for the highest
+                                ROI, and champion fairness in our business partnerships </p>
+
+                        </div>
+
+                        <div class=" hidden md:block md:h-56 relative -right-16 z-10 ">
+                            <img class="h-full" src="./../dist/images/blue-tri.png" alt="">
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class=" hidden md:block w-[30%] relative bg-gray-50">
+                <div class=" absolute bottom-0">
+                    <img src="./../dist/images/pattern.svg" class="h-44" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mission -->
+
+
+    <!-- footer -->
+    <div id="footerDiv"></div>
+
+    <script src="./../dist/jquery.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./../dist/owl.carousel.min.js"></script>
+    <script src="./../dist/app.js"></script>
+
+</body>
+
+</html>
